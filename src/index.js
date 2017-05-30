@@ -4,10 +4,11 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 
 //Importing React router
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import reducers from './reducers';
 import PostIndex from './components/post_index';
+import PostsNew from './components/post_new'
 import ReduxPromise from 'redux-promise';
 
 
@@ -20,7 +21,11 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
       <div>
-        <Route path='/' component = { PostIndex } />
+        <Switch>
+          <Route path='/posts/new' component = { PostsNew } />
+          {/*^^^^^Put your most specific route at the top.^^^^^^*/}
+          <Route path='/' component = { PostIndex } />     
+        </ Switch>
       </div>
     </BrowserRouter>
   </Provider>
