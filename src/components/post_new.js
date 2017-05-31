@@ -4,23 +4,38 @@ import { Field, reduxForm } from 'redux-form'
 //reduxForm is very similar to connect
 
 class PostNew extends Component {
-    renderTitleField(field){
+    
+    renderField(field){
         return (
-            <div>
+            <div className = 'form-group'>
+                <label>{field.label}</label>
                 <input 
+                    className = 'form-control'
                     type = "text"
                     {...field.input}
                 />
             </div>
         )
     }
-    
+
     render(){
         return(
             <form> 
-                <Field 
+                <Field
+                    label = 'Title'
+                    //label can be anyyhting you want. Its a property and you can choose to name it as you please.  
                     name = "title"
-                    component = {this.renderTitleField}
+                    component = {this.renderField}
+                />
+                 <Field 
+                    label = "Tags"
+                    name = "tags"
+                    component = {this.renderField}
+                />
+                <Field 
+                    label = "Post Content"
+                    name = "tags"
+                    component = {this.renderField}
                 />
             </form>
         )
