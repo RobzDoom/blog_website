@@ -24,8 +24,9 @@ class PostNew extends Component {
 
     render(){
         const { handleSubmit } = this.props
+        // handle submit is coming from ReduxForm
 
-        
+
         return(
             <form onSubmit={handleSubmit(this.onSubmit.bind(this))}> 
                 <Field
