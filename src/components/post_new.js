@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Field, reduxForm } from 'redux-form'
+import { Link } from 'react-router-dom'
 
 //reduxForm is very similar to connect
 
@@ -50,6 +51,7 @@ class PostNew extends Component {
                     component = {this.renderField}
                 />
                 <button type="submit" className = "btn btn-primary"> Submit </button>
+                <Link to = "" className= "btn btn-danger">Go Back</Link>
             </form>
         )
     }
