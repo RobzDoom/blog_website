@@ -8,7 +8,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import reducers from './reducers';
 import PostIndex from './components/post_index';
-import PostsNew from './components/post_new'
+import PostsNew from './components/post_new';
+import PostsShow from './components/post_show';
+
 import ReduxPromise from 'redux-promise';
 
 
@@ -24,6 +26,7 @@ ReactDOM.render(
         <Switch>
           <Route path='/posts/new' component = { PostsNew } />
           {/*^^^^^Put your most specific route at the top.^^^^^^*/}
+          <Route path= 'posts/dave' component= { PostsShow } /> 
           <Route path='/' component = { PostIndex } />     
         </ Switch>
       </div>
