@@ -26,7 +26,7 @@ ReactDOM.render(
         <Switch>
           <Route path='/posts/new' component = { PostsNew } />
           {/*^^^^^Put your most specific route at the top.^^^^^^*/}
-          <Route path= 'posts/dave' component= { PostsShow } /> 
+          <Route path= '/posts/:id' component= { PostsShow } /> 
           <Route path='/' component = { PostIndex } />     
         </ Switch>
       </div>
