@@ -4,10 +4,11 @@ import { fetchPost } from '../actions'
 
 class PostsShow extends Component {
     componentDidMount (){
-        this.props.match.params.id
-        this.props.fetchPost();
+       const { id } =  this.props.match.params.id
+        this.props.fetchPost(id);
     }
     render(){
+        this.props.post
         return (
             <div>
                 Post Show ajshdjashdj
@@ -16,6 +17,8 @@ class PostsShow extends Component {
     };
 }
 
-function mapStateToProps({ posts })
+function mapStateToProps({ posts }, ownProps){
+    return { post: [ownProps.match.params.id] }
+}
 
-export default connect(null, { fetchPost }) (PostsShow);
+export default connect(mapStateToProps, { fetchPost }) (PostsShow);
